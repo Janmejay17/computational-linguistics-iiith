@@ -1,0 +1,26 @@
+The Functionalities in the experiment are:
+1)A dropdown menu which displays a text "---Select Language---", it contains English and Hindi the languages that are available to choose.
+
+2)We need to select one option from the dropdown menu i.e., English or Hindi, then a sentence "Form a sentence (Declarative or Interrogative or any other type) from the given words", words which are not in a correct order are displayed then words need to be selected to form a correct sentence.
+
+3)After selecting atleast one word,"reform-the-sentence" button is being activated.
+
+4)After clicking the "reform-the-sentence" button,the words are put back and there would be a chance to reselect the words again.
+
+5)Once all the words are selected, "Check the corectness of this sentence" button is activated.
+
+6)If the selection order of words forms a correct sentence, if we click on "Check the corectness of this sentence" button "Right Answer!!!" is displayed, acknowledging that the sentence is a well formed sentence.
+
+7)If the sentence formed is wrong,a text saying "Wrong answer!!!" is displayed on the screen and a button that says, "get correct sentence" is activated on the screen.
+
+8)After clicking the button "get correct sentence",you will be shown all the possible sentences that can be formed using the given words.
+
+9)Along with the possible sentences a button which says "Hide the correct Sentence" is displayed and activated.
+
+10)Once we click on the "Hide the correct Sentence" button the correct sentences are disappeared and a button saying "Get Answers" is activated.
+
+11)which on click again displayes the correct sentences.
+
+12)Along with the above functionalities, I think it would be better to have a functionality that can unselect the words from the selected words.
+
+13)The "get correct Sentence" button should be avtivated even if the user forms a correct sentence such that he can know the remaining correct answers.
