@@ -46,6 +46,20 @@ var answers="";
 	}
 	return jum;
 }
+function correction(){
+	var fs = finalsent.trim();
+	var res;
+	if(x=='english')
+		res = eng[r].includes(fs);
+	else if(x == 'hindi')
+		res = hin[r].includes(fs);
+
+	if(res==true)
+		result.innerHTML = "<center><font color = 'green'>Right Answer!!!</font></center>";
+	else
+		result.innerHTML = "<center><font color = 'red'>Wrong Answer!!!</font><br><button id='showbtn' onclick='getcorr()'>Get correct sentence</button></center>";
+
+}
 function reform(){
 	for(i=0;i<=j.length-1;i++){
 		document.getElementById('btn'+i).style.display = "";
@@ -68,10 +82,10 @@ function formsentence(id,value){
 	senten.style.textAlign = 'center';
 	senten.innerHTML = finalsent;
 	document.getElementById(id).style.display = "none";
-		refor.innerHTML = "<center><button id='refornbtn' onclick='reform()'>Re-form the sentence</button></center>"
+		refor.innerHTML = "<center><button id='reforbtn' onclick='reform()'>Re-form the sentence</button></center>"
 		clickcnt++;
 	if(btncount==clickcnt){
-		correctness.innerHTML = "<center><button id='correctnessbtn' onclick='correctioncheck()'>Check the correctness of this sentence</button></center>"
+		correctness.innerHTML = "<center><button id='correctbtn' onclick='correction()'>Check the correctness of this sentence</button></center>"
 	}
 } 
 
