@@ -34,7 +34,7 @@ var clickcnt = 0;
 var x;
 var answers="";
 
-  function insiderandomizer(jumb){
+  function random(jumb){
 	var jum = jumb.split(" ");
 	var i = jum.length, temp, randomi;
 	while(0!==i){
@@ -46,9 +46,22 @@ var answers="";
 	}
 	return jum;
 }
+function formsentence(id,value){
+	des4.style.textAlign = "center";
+	des4.innerHTML = "<br><font color='darkblue'><b>Formed Sentence</b></font><font color='blue'> <i>(after selecting words):</i></font><br>";
+	finalsent += value + " ";
+	senten.style.textAlign = 'center';
+	senten.innerHTML = finalsent;
+	document.getElementById(id).style.display = "none";
+		refor.innerHTML = "<center><button id='refornbtn' onclick='reformsentence()'>Re-form the sentence</button></center>"
+		clickcnt++;
+	if(btncount==clickcnt){
+		correctness.innerHTML = "<center><button id='correctnessbtn' onclick='correctioncheck()'>Check the correctness of this sentence</button></center>"
+	}
+} 
 
 
-function dropdownchange() {
+function select() {
 x = "";
      x=document.getElementById('lang').value;
     if(x=='sel') {
@@ -80,7 +93,7 @@ x = "";
 		des3.innerHTML = "<center><i>(select the buttons in proper order)</i></center>"
 		 r = Math.floor(Math.random()*9);
 		var jumb = eng[r][0];
-		j = insiderandomizer(jumb);
+		j = random(jumb);
 		des2.style.textAlign = "center";
 		var b ="";
 		var bs = "";
@@ -108,7 +121,7 @@ x = "";
 		des3.innerHTML = "<center><i>(select the buttons in proper order)</i></center>"
 		 r = Math.floor(Math.random()*6);
 		var jumb = hin[r][0];
-		j = insiderandomizer(jumb);
+		j = random(jumb);
 		des2.style.textAlign = "center";
 		var b ="";
 		var bs = "";
@@ -123,9 +136,9 @@ x = "";
 		des2.innerHTML = bs.trim();
 	}
 }
-         function experimentshow(){
+         function experiment(){
 	h1.innerHTML = "Experiment";
-	sel.innerHTML = "<select id='lang' onchange = 'dropdownchange()'><option value='select'>---Select Language---</option><option value='english'>English</option><option value='hindi'>Hindi</option></select>";
+	sel.innerHTML = "<select id='lang' onchange = 'select()'><option value='select'>---Select Language---</option><option value='english'>English</option><option value='hindi'>Hindi</option></select>";
 	sdes.innerHTML = "";
 	des3.innerHTML = "";
 	des.innerHTML = "";
@@ -139,4 +152,3 @@ x = "";
 	answers="";
 	canswers.innerHTML = "";
      }
-
