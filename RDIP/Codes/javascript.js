@@ -46,6 +46,21 @@ var answers="";
 	}
 	return jum;
 }
+function reform(){
+	for(i=0;i<=j.length-1;i++){
+		document.getElementById('btn'+i).style.display = "";
+	}
+	finalsent = "";
+	senten.innerHTML = finalsent;
+	refor.innerHTML = "";
+	desc4.innerHTML = "";
+	correctness.innerHTML = "";
+	clickcnt = 0;
+	result.innerHTML = "";
+	answers="";
+	canswers.innerHTML = "";
+}
+
 function formsentence(id,value){
 	des4.style.textAlign = "center";
 	des4.innerHTML = "<br><font color='darkblue'><b>Formed Sentence</b></font><font color='blue'> <i>(after selecting words):</i></font><br>";
@@ -53,7 +68,7 @@ function formsentence(id,value){
 	senten.style.textAlign = 'center';
 	senten.innerHTML = finalsent;
 	document.getElementById(id).style.display = "none";
-		refor.innerHTML = "<center><button id='refornbtn' onclick='reformsentence()'>Re-form the sentence</button></center>"
+		refor.innerHTML = "<center><button id='refornbtn' onclick='reform()'>Re-form the sentence</button></center>"
 		clickcnt++;
 	if(btncount==clickcnt){
 		correctness.innerHTML = "<center><button id='correctnessbtn' onclick='correctioncheck()'>Check the correctness of this sentence</button></center>"
