@@ -33,7 +33,7 @@ var finalsent ="";
 var clickcnt = 0;
 var x;
 var answers="";
-
+//Random words jumble
   function random(jumb){
 	var jum = jumb.split(" ");
 	var i = jum.length, temp, randomi;
@@ -46,6 +46,16 @@ var answers="";
 	}
 	return jum;
 }
+//extra functinalities to hide and get answers
+function toggle(){
+		canswers.style.display=""
+		result.innerHTML = "<center><font color = 'red'>Wrong Answer!!!</font><br><button id='showbtn' onclick='hide()'>Hide correct sentence</button></center>";
+}
+function hide(){
+	result.innerHTML = "<center><font color = 'red'>Wrong Answer!!!</font><br><button id='showbtn' onclick='toggle()'>Get Answers</button></center>";
+	canswers.style.display="none";
+	}
+//Get correct answer functionality
 function getcorr(){
 	answers="";
 	var totalans = 0;
@@ -69,6 +79,7 @@ function getcorr(){
 		canswers.style.display="";
 	}
 }
+// correction of the sentence
 function correction(){
 	var fs = finalsent.trim();
 	var res;
@@ -83,6 +94,7 @@ function correction(){
 		result.innerHTML = "<center><font color = 'red'>Wrong Answer!!!</font><br><button id='showbtn' onclick='getcorr()'>Get correct sentence</button></center>";
 
 }
+//reform of the sentence
 function reform(){
 	for(i=0;i<=j.length-1;i++){
 		document.getElementById('btn'+i).style.display = "";
@@ -97,7 +109,7 @@ function reform(){
 	answers="";
 	canswers.innerHTML = "";
 }
-
+//form sentence after selecting language
 function formsentence(id,value){
 	des4.style.textAlign = "center";
 	des4.innerHTML = "<br><font color='darkblue'><b>Formed Sentence</b></font><font color='blue'> <i>(after selecting words):</i></font><br>";
@@ -112,7 +124,7 @@ function formsentence(id,value){
 	}
 } 
 
-
+//selecting english or hindi option
 function select() {
 x = "";
      x=document.getElementById('lang').value;
@@ -188,6 +200,7 @@ x = "";
 		des2.innerHTML = bs.trim();
 	}
 }
+//function of experiment to perform this experiment()
          function experiment(){
 	h1.innerHTML = "Experiment";
 	sel.innerHTML = "<select id='lang' onchange = 'select()'><option value='select'>---Select Language---</option><option value='english'>English</option><option value='hindi'>Hindi</option></select>";
