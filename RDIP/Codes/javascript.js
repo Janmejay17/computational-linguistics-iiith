@@ -46,6 +46,29 @@ var answers="";
 	}
 	return jum;
 }
+function getcorr(){
+	answers="";
+	var totalans = 0;
+	canswers.innerHTML = "";
+	if (x=='english'){
+		totalans = eng[r].length-1;
+		result.innerHTML = "<center><font color = 'red'>Wrong Answer!!!</font><br><button id='showbtn' onclick='hide()'>Hide correct sentence</button></center>";
+		for(i=0;i<=totalans;i++){
+			answers += "<center>"+eng[r][i]+"<br></center>"
+		}
+		canswers.innerHTML = answers;
+		canswers.style.display="";
+	}
+	else if(x=='hindi'){
+		totalans = hin[r].length-1;
+		result.innerHTML = "<center><font color = 'red'>Wrong Answer!!!</font><br><button id='showbtn' onclick='hide()'>Hide correct sentence</button></center>";
+		for(i=0;i<=totalans;i++){
+			answers += "<center>"+hin[r][i]+"<br></center>"
+		}
+		canswers.innerHTML = answers;
+		canswers.style.display="";
+	}
+}
 function correction(){
 	var fs = finalsent.trim();
 	var res;
